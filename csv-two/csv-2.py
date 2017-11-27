@@ -12,7 +12,7 @@ def convert(csv_name, db_name, table_name, external_header_row=[], commit=False,
 
     Keyword arguments:
         csv_name -- CSV input file
-        db_name -- name if database file to output to
+        db_name -- name of database file to output to
         table_name -- name of table within database to write to
         external_header_row -- list of names of table columns (default [])
             note that only the first item when each item is split with " " as delimeter will be used
