@@ -1,5 +1,5 @@
-# This setup.py copied from:
-#https://github.com/pypa/sampleproject/blob/master/setup.py
+# Thank you to pypa for providing a template for this setup.py:
+# https://github.com/pypa/sampleproject/blob/master/setup.py
 
 from setuptools import setup, find_packages
 # To use a consistent encoding
@@ -16,7 +16,7 @@ setup(
     
     version='2.0.0',
 
-    description='A sample Python project',
+    description='A CSV to SQL database converter',
     long_description=long_description,
 
     # The project's main homepage.
@@ -47,6 +47,8 @@ setup(
 
     # What does your project relate to?
     keywords='csv sql',
+    
+    packages=["csvtwo"],
     
     install_requires=[],
 )
