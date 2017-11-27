@@ -46,21 +46,10 @@ def convert(csv_name, db_name, table_name, external_header_row=[], commit=False,
                 for index, item in enumerate(row):  # Insert NULL into empty fields
                     if not item: row[index] = "NULL"
                 wqm = "INSERT INTO {table} ({names}) VALUES ({vals})".format( table=table_name, names=val_nams, vals="?,"*(len(row)-1)+"?" )
-                command_args = ( wqm, (*row,) )
+                command_args = ( wqm, row )
                 cursor.execute(*command_args)
             
             if commit: connection.commit()
-            #----
-            while True:
-                ans = input("print recrds to stdout? y/n\n").lower()
-                if ans == "y":
-                    cursor.execute("SELECT * FROM {}".format(table_name))
-                    for r in cursor.fetchall():
-                        print(r)
-                    break
-                elif ans == "n":
-                    break
-                print("'{}' not a valid option".format(ans))
-        
+
 if __name__ == "__main__":
     pass 
